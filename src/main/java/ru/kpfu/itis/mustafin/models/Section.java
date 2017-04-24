@@ -1,4 +1,4 @@
-package ru.itis.kpfu.mustafin.models;
+package ru.kpfu.itis.mustafin.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -15,7 +15,7 @@ public class Section {
     private long id;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     public Section() {
 
@@ -30,7 +30,7 @@ public class Section {
     }
 
     public void setId(long id) {
-        id = id;
+        this.id = id;
     }
 
     public String getName() {

@@ -1,4 +1,4 @@
-package ru.itis.kpfu.mustafin.models;
+package ru.kpfu.itis.mustafin.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -30,23 +30,25 @@ public class Teacher {
     private String phoneNumber;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "sports_club_id")
+    @JoinColumn(name = "sports_club_id", nullable = false)
     private SportsClub sportsClub;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "section_id")
+    @JoinColumn(name = "section_id", nullable = false)
     private Section section;
 
     public Teacher(){
 
     }
 
-    public Teacher(String fullName, int age, int workExperience, String regalia, String phoneNumber){
+    public Teacher(String fullName, int age, int workExperience, String regalia, String phoneNumber, SportsClub sportsClub, Section section){
         this.fullName = fullName;
         this.age = age;
         this.workExperience = workExperience;
         this.regalia = regalia;
         this.phoneNumber = phoneNumber;
+        this.sportsClub = sportsClub;
+        this.section = section;
     }
 
     public long getId() {
@@ -54,7 +56,7 @@ public class Teacher {
     }
 
     public void setId(long id) {
-        id = id;
+        this.id = id;
     }
 
     public int getAge() {

@@ -1,4 +1,4 @@
-package ru.itis.kpfu.mustafin.models;
+package ru.kpfu.itis.mustafin.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -18,14 +18,15 @@ public class SportsClub {
     private String name;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "city_id", nullable = false)
     private City city;
 
     public SportsClub(){
 
     }
 
-    public SportsClub(City city){
+    public SportsClub(String name, City city){
+        this.name = name;
         this.city = city;
     }
 
@@ -34,7 +35,15 @@ public class SportsClub {
     }
 
     public void setId(long id) {
-        id = id;
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public City getCity() {

@@ -1,6 +1,4 @@
-package ru.itis.kpfu.mustafin.models;
-
-import org.hibernate.annotations.GenericGenerator;
+package ru.kpfu.itis.mustafin.models;
 
 import javax.persistence.*;
 
@@ -9,15 +7,15 @@ import javax.persistence.*;
 public class City {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id", length = 6, nullable = false)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
-    SportsClub sportsClub;
+    public City(){
+
+    }
 
     public City(String name){
         this.name = name;
@@ -27,7 +25,7 @@ public class City {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -39,4 +37,8 @@ public class City {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }
