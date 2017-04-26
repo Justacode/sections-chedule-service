@@ -12,9 +12,5 @@ public interface CityService {
 
     City getById(long id);
 
-    City getByName(String name);
-
-    void delete(String name);
-
     void delete(long id);
 }

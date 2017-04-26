@@ -1,3 +1,3 @@
 <div>
-    <a href="/home">TRY!!!</a>
+    <a href="/cities">TRY!!!</a>
 </div>

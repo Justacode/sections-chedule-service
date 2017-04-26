@@ -1,6 +1,7 @@
 package ru.kpfu.itis.mustafin.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "cities")
@@ -12,6 +13,9 @@ public class City {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "city")
+    List<SportsClub> sportsClubs;
 
     public City(){
 

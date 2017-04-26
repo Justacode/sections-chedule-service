@@ -3,16 +3,16 @@ package ru.kpfu.itis.mustafin.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "teachers")
 public class Teacher {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", length = 6, nullable = false)
-    private long id;
+    private Long id;
 
     @Column(name = "full_name")
     private String fullName;
@@ -36,6 +36,9 @@ public class Teacher {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "section_id", nullable = false)
     private Section section;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "teacher")
+    private List<Training> trainings;
 
     public Teacher(){
 

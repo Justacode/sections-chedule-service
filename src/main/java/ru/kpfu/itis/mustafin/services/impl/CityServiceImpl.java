@@ -14,14 +14,12 @@ import java.util.List;
 @Transactional
 public class CityServiceImpl implements CityService {
 
-
     private final CityRepository repository;
 
     @Autowired
     public CityServiceImpl(CityRepository cityRepository){
         this.repository = cityRepository;
     }
-
 
     public City addCity(City city) {
         return repository.saveAndFlush(city);
@@ -33,14 +31,6 @@ public class CityServiceImpl implements CityService {
 
     public City getById(long id){
         return repository.findOne(id);
-    }
-
-    public City getByName(String name) {
-        return repository.findByName(name);
-    }
-
-    public void delete(String name) {
-        repository.deleteByName(name);
     }
 
     public void delete(long id) {

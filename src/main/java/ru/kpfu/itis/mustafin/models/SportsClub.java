@@ -3,16 +3,16 @@ package ru.kpfu.itis.mustafin.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "sports_clubs")
 public class SportsClub {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", length = 6, nullable = false)
-    private long id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -21,13 +21,11 @@ public class SportsClub {
     @JoinColumn(name = "city_id", nullable = false)
     private City city;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "sportsClub")
+    private List<Teacher> teachers;
+
     public SportsClub(){
 
-    }
-
-    public SportsClub(String name, City city){
-        this.name = name;
-        this.city = city;
     }
 
     public long getId() {
