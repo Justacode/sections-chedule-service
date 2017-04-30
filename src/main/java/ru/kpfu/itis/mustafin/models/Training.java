@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class Training {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", length = 6, nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "trainings_id_sequence")
+    @SequenceGenerator(name = "trainings_id_sequence", sequenceName = "trainings_id_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "day")
@@ -17,11 +17,11 @@ public class Training {
     @Column(name = "time")
     private String time;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "teacher_id", nullable = false)
     private Teacher teacher;
 
-    public Training(){
+    public Training() {
 
     }
 
@@ -48,4 +48,13 @@ public class Training {
     public void setTime(String time) {
         this.time = time;
     }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
 }

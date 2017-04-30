@@ -30,6 +30,10 @@ public class SportsClubServiceImpl implements SportsClubService {
         return repository.findAll();
     }
 
+    public SportsClub getByName(String name) {
+        return repository.getByName(name);
+    }
+
     @Override
     public SportsClub getById(long id) {
         return repository.findOne(id);
@@ -41,7 +45,9 @@ public class SportsClubServiceImpl implements SportsClubService {
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
         repository.delete(id);
     }
+
+
 }

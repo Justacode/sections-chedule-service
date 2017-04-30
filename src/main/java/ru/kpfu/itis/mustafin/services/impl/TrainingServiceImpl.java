@@ -17,7 +17,7 @@ public class TrainingServiceImpl implements TrainingService {
     private TrainingRepository repository;
 
     @Autowired
-    TrainingServiceImpl(TrainingRepository trainingRepository){
+    TrainingServiceImpl(TrainingRepository trainingRepository) {
         this.repository = trainingRepository;
     }
 
@@ -32,22 +32,27 @@ public class TrainingServiceImpl implements TrainingService {
     }
 
     @Override
-    public Training getById(long id) {
+    public Training getById(Long id) {
         return repository.findOne(id);
     }
 
     @Override
-    public List<Training> getByTeacher(long teacherId) {
+    public List<Training> getByTeacher(Long teacherId) {
         return repository.findByTeacher_Id(teacherId);
     }
 
     @Override
-    public List<Training> getByTeacherSorted(long teacherId) {
+    public List<Training> getByTeacherSorted(Long teacherId) {
         return repository.findByTeacher_IdOrderByDayAsc(teacherId);
     }
 
     @Override
-    public void delete(long id) {
+    public Training getByTeacherAndDayAndTime(Long teacherId, int day, String time) {
+        return repository.findByTeacher_IdAndDayAndTime(teacherId, day, time);
+    }
+
+    @Override
+    public void delete(Long id) {
         repository.delete(id);
     }
 }

@@ -6,22 +6,23 @@ import java.util.*;
 
 public class TrainingScheduleConstructor {
 
-    public static Map<String, List<String>> construct(List<Training> trainings) {
-        Map<String, List<String>> result = new HashMap<>(5);
+    public static Map<String, List<Long>> construct(List<Training> trainings) {
+        Map<String, List<Long>> result = new HashMap<>(5);
 
         for (Training training : trainings) {
             String time = training.getTime();
 
             if (!result.containsKey(time)) {
-                String[] events = new String[6];
-                Arrays.fill(events, "-");
+                Long[] events = new Long[6];
+                Arrays.fill(events, (long) 0);
                 result.put(time, new ArrayList<>(Arrays.asList(events)));
             }
 
-            List<String> trainingsByTime = result.get(time);
-            int dayIndex = training.getDay()-1;
+            List<Long> trainingsByTime = result.get(time);
+            int dayIndex = training.getDay() - 1;
+            Long trainingId = training.getId();
 
-            trainingsByTime.set(dayIndex , "+");
+            trainingsByTime.set(dayIndex, trainingId);
             result.put(time, trainingsByTime);
         }
 

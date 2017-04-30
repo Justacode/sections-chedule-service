@@ -36,10 +36,14 @@ public class SectionServiceImpl implements SectionService {
         return repository.findOne(id);
     }
 
-    @Override
-    public List<Section> getIfTeachersExist(long clubId) {
-        return repository.findSectionsByClub(clubId);
+    public Section getByName(String name) {
+        return repository.getByName(name);
     }
+
+//    @Override
+//    public List<Section> getIfTeachersExist(long clubId) {
+//        return repository.findSectionsByClub(clubId);
+//    }
 
     @Override
     public void delete(long id) {

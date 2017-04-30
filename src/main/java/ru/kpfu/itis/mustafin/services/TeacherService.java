@@ -10,9 +10,11 @@ public interface TeacherService {
 
     List<Teacher> getAll();
 
-    Teacher getById(long id);
+    Teacher getById(Long id);
 
-    List<Teacher> getBySportsClubAndSection(long sportsClubId, long sectionId);
+    Teacher getByName(String name);
 
-    void delete(long id);
+    List<Teacher> getBySportsClubAndSection(Long sportsClubId, Long sectionId);
+
+    void delete(Long id);
 }

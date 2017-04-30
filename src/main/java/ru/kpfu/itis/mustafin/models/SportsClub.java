@@ -3,6 +3,7 @@ package ru.kpfu.itis.mustafin.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,29 +11,29 @@ import java.util.List;
 public class SportsClub {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", length = 6, nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sports_clubs_id_sequence")
+    @SequenceGenerator(name = "sports_clubs_id_sequence", sequenceName = "sports_clubs_id_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "name")
     private String name;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "city_id", nullable = false)
     private City city;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "sportsClub")
-    private List<Teacher> teachers;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "sportsClub")
+    private List<Teacher> teachers = new ArrayList<Teacher>();
 
     public SportsClub(){
 
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

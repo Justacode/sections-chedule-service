@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface SportsClubRepository extends JpaRepository<SportsClub, Long> {
-    List<SportsClub> findByCity_Id(long city_id);
+    List<SportsClub> findByCity_Id(Long city_id);
+
+    SportsClub getByName(String name);
 }

@@ -10,8 +10,8 @@ import java.util.List;
 
 @Repository
 public interface SectionRepository extends JpaRepository<Section, Long> {
-
-    @Query("select s from Section s where exists(select t from Teacher t where s = t.section and t.sportsClub = :sportsclubid)")
-    List<Section> findSectionsByClub(@Param("sportsclubid") long sportsClubId);
+    Section getByName(String name);
+//    @Query("select s from Section s, Teacher t where ")
+//    List<Section> findSectionsByClub(@Param("sportsclubid") long sportsClubId);
 
 }

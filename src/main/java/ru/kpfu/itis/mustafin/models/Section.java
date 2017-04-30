@@ -1,8 +1,10 @@
 package ru.kpfu.itis.mustafin.models;
 
+import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,15 +12,16 @@ import java.util.List;
 public class Section {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", length = 6, nullable = false)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sections_id_sequence")
+    @SequenceGenerator(name = "sections_id_sequence", sequenceName = "sections_id_seq", allocationSize = 1)
+    private Long id;
 
     @Column(name = "name")
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "section")
-    private List<Teacher> teachers;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "section")
+    @BatchSize(size = 25)
+    private List<Teacher> teachers = new ArrayList<Teacher>();
 
     public Section() {
 
@@ -28,11 +31,11 @@ public class Section {
         this.name = name;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

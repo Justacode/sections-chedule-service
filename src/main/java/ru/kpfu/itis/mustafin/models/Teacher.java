@@ -3,6 +3,7 @@ package ru.kpfu.itis.mustafin.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,8 +11,8 @@ import java.util.List;
 public class Teacher {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", length = 6, nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teachers_id_sequence")
+    @SequenceGenerator(name = "teachers_id_sequence", sequenceName = "teachers_id_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "full_name")
@@ -29,22 +30,22 @@ public class Teacher {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "sports_club_id", nullable = false)
     private SportsClub sportsClub;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "section_id", nullable = false)
     private Section section;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "teacher")
-    private List<Training> trainings;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "teacher")
+    private List<Training> trainings = new ArrayList<Training>();
 
-    public Teacher(){
+    public Teacher() {
 
     }
 
-    public Teacher(String fullName, int age, int workExperience, String regalia, String phoneNumber, SportsClub sportsClub, Section section){
+    public Teacher(String fullName, int age, int workExperience, String regalia, String phoneNumber, SportsClub sportsClub, Section section) {
         this.fullName = fullName;
         this.age = age;
         this.workExperience = workExperience;
@@ -54,11 +55,11 @@ public class Teacher {
         this.section = section;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -100,5 +101,21 @@ public class Teacher {
 
     public void setRegalia(String regalia) {
         this.regalia = regalia;
+    }
+
+    public SportsClub getSportsClub() {
+        return sportsClub;
+    }
+
+    public void setSportsClub(SportsClub sportsClub) {
+        this.sportsClub = sportsClub;
+    }
+
+    public Section getSection() {
+        return section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
     }
 }

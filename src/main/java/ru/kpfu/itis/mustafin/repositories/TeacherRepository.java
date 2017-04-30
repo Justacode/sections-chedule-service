@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface TeacherRepository extends JpaRepository<Teacher, Long>{
-    List<Teacher> findBySportsClubIdAndSectionId(long sportsClubId, long sectionId);
+    List<Teacher> findBySportsClubIdAndSectionId(Long sportsClubId, Long     sectionId);
+    Teacher getByFullName(String name);
 }

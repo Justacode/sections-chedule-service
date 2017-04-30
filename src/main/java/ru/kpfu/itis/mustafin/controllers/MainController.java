@@ -12,6 +12,8 @@ import ru.kpfu.itis.mustafin.services.*;
 import ru.kpfu.itis.mustafin.services.impl.CityServiceImpl;
 import ru.kpfu.itis.mustafin.util.TrainingScheduleConstructor;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -34,21 +36,29 @@ public class MainController {
         this.trainingService = trainingServ;
     }
 
-    @RequestMapping("/cities")
+    @RequestMapping("/")
+    void start(HttpServletResponse response) throws IOException {
+        response.sendRedirect("/login");
+    }
+
+    @RequestMapping("/catalog/cities")
     public String cities(Model model){
         List<City> cities = cityService.getAll();
         model.addAttribute("cities", cities);
         return "cities";
     }
 
-    @RequestMapping("/sportsclubs")
+    @RequestMapping("/catalog/sportsclubs")
     public String sportsClubs(Model model, @RequestParam("cityid") long cityId){
         List<SportsClub> sportsClubs = sportsClubService.getByCityId(cityId);
+        List<City> cities = cityService.getAll();
+        model.addAttribute("cityid", cityId);
+        model.addAttribute("cities", cities);
         model.addAttribute("sportsClubs", sportsClubs);
         return "sportsclubs";
     }
 
-    @RequestMapping("/sections")
+    @RequestMapping("/catalog/sections")
     public String sections(Model model, @RequestParam("sportsclubid") long sportsClubId){
         List<Section> sections = sectionService.getAll();
         model.addAttribute("sections", sections);
@@ -56,23 +66,27 @@ public class MainController {
         return "sections";
     }
 
-    @RequestMapping("/teachers")
+    @RequestMapping("/catalog/teachers")
     public String teachers(Model model, @RequestParam("sportsclubid") long sportsClubId, @RequestParam("sectionid") long sectionId){
         List<Teacher> teachers = teacherService.getBySportsClubAndSection(sportsClubId, sectionId);
+        model.addAttribute("sportsclubid", sportsClubId);
+        model.addAttribute("sectionid", sectionId);
         model.addAttribute("teachers", teachers);
         return "teachers";
     }
 
-    @RequestMapping("/schedule")
+    @RequestMapping("/catalog/schedule")
     public String schedule(Model model, @RequestParam("teacherid") long teacherId){
+        Teacher teacher = teacherService.getById(teacherId);
         List<Training> trainings = trainingService.getByTeacherSorted(teacherId);
-        Map<String, List<String>> schedule = TrainingScheduleConstructor.construct(trainings);
+        Map<String, List<Long>> schedule = TrainingScheduleConstructor.construct(trainings);
+        model.addAttribute("teacher", teacher);
         model.addAttribute("trainings", schedule);
         return "schedule";
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/catalog/")
     public String index(Model model){
-        return "index";
+        return "start";
     }
 }

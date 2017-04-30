@@ -19,6 +19,7 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jpa:1.10.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.12.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.9" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.22" />
           <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.22" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.3.RELEASE" />
@@ -48,8 +49,6 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:4.2.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:4.2.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:4.2.1.RELEASE" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-simple:1.6.1" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.1" />
           <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5.2" />
           <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.11" />
         </element>

@@ -2,9 +2,9 @@ package ru.kpfu.itis.mustafin.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.kpfu.itis.mustafin.models.City;
+import ru.kpfu.itis.mustafin.models.User;
 
 @Repository
-public interface CityRepository extends JpaRepository<City,Long>{
-    City getByName(String name);
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByLogin(String login);
 }

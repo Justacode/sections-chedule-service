@@ -28,18 +28,22 @@ public class TeacherServiceImpl implements TeacherService{
         return repository.findAll();
     }
 
+    public Teacher getByName(String name) {
+        return repository.getByFullName(name);
+    }
+
     @Override
-    public Teacher getById(long id) {
+    public Teacher getById(Long id) {
         return repository.findOne(id);
     }
 
     @Override
-    public List<Teacher> getBySportsClubAndSection(long sportsClubId, long sectionId) {
+    public List<Teacher> getBySportsClubAndSection(Long sportsClubId, Long sectionId) {
         return repository.findBySportsClubIdAndSectionId(sportsClubId, sectionId);
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
         repository.delete(id);
     }
 }

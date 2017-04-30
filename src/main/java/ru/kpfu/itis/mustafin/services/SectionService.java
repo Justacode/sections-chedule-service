@@ -13,7 +13,8 @@ public interface SectionService {
 
     Section getById(long id);
 
-    List<Section> getIfTeachersExist(long clubId);
+    Section getByName(String name);
+    //List<Section> getIfTeachersExist(long clubId);
 
     void delete(long id);
 }

@@ -12,7 +12,9 @@ public interface SportsClubService {
 
     SportsClub getById(long id);
 
+    SportsClub getByName(String name);
+
     List<SportsClub> getByCityId(long cityId);
 
-    void delete(long id);
+    void delete(Long id);
 }

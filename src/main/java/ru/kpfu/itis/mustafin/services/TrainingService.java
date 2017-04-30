@@ -10,11 +10,13 @@ public interface TrainingService {
 
     List<Training> getAll();
 
-    Training getById(long id);
+    Training getById(Long id);
 
-    List<Training> getByTeacher(long teacherId);
+    List<Training> getByTeacher(Long teacherId);
 
-    List<Training> getByTeacherSorted(long teacherId);
+    Training getByTeacherAndDayAndTime(Long teacherId, int day, String time);
 
-    void delete(long id);
+    List<Training> getByTeacherSorted(Long teacherId);
+
+    void delete(Long id);
 }

@@ -22,7 +22,7 @@ public class CityServiceImpl implements CityService {
     }
 
     public City addCity(City city) {
-        return repository.saveAndFlush(city);
+        return repository.save(city);
     }
 
     public List<City> getAll() {
@@ -33,7 +33,11 @@ public class CityServiceImpl implements CityService {
         return repository.findOne(id);
     }
 
-    public void delete(long id) {
+    public City getByName(String name) {
+        return repository.getByName(name);
+    }
+
+    public void delete(Long id) {
         repository.delete(id);
     }
 }
