@@ -1,15 +1,21 @@
 INSERT INTO cities (id, name) VALUES (100,'Казань');
 INSERT INTO cities (id, name) VALUES (200,'Москва');
 INSERT INTO cities (id, name) VALUES (300,'Санкт-Петербург');
+INSERT INTO cities (id, name) VALUES (400,'Йошкар-Ола');
 
 INSERT  INTO sports_clubs (id, name, city_id) VALUES (100, 'MAXIMUS', 100);
 INSERT  INTO sports_clubs (id, name, city_id) VALUES (200,'DYNAMITE GYM', 200 );
 INSERT  INTO sports_clubs (id, name, city_id) VALUES (300,'Brilliant GYM', 300 );
 INSERT  INTO sports_clubs (id, name, city_id) VALUES (400,'Alex Fitness', 100 );
+INSERT  INTO sports_clubs (id, name, city_id) VALUES (500,'Powerhouse GYM', 300 );
+INSERT  INTO sports_clubs (id, name, city_id) VALUES (600,'Академия Тенниса', 100 );
 
 INSERT INTO sections (id, name) VALUES (100, 'Воллейбол');
 INSERT INTO sections (id, name) VALUES (200, 'Бокс');
+INSERT INTO sections (id, name) VALUES (300, 'Аквааэробика');
 INSERT INTO sections (id, name) VALUES (400, 'Настольный теннис');
+INSERT INTO sections (id, name) VALUES (500, 'Фитнесс');
+INSERT INTO sections (id, name) VALUES (600, 'Танцы живота');
 INSERT INTO sections (id, name) VALUES (700, 'Тяжелая атлетика');
 
 INSERT INTO teachers (id, age, full_name, phone_number, regalia, work_experience, section_id, sports_club_id)

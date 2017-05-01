@@ -16,20 +16,29 @@
         </form>
     </@security.authorize>
         <div>
-        <#if sections?has_content>
-            <#list sections as s >
-                <h5><a href="/catalog/teachers?sportsclubid=${sportsclubid}&sectionid=${s.id}">${s.name}</a></h5>
-                <@security.authorize  access="hasRole('ROLE_ADMIN')">
+        <@security.authorize access="hasRole('ROLE_USER')">
+            <#if sections_user?has_content>
+                <#list sections_user as s >
+                    <h5><a href="/catalog/teachers?sportsclubid=${sportsclubid}&sectionid=${s.id}">${s.name}</a></h5>
+                </#list>
+            <#else >
+                <p>К сожалению, для данного клуба нет доступных секций</p>
+            </#if>
+        </@security.authorize>
+        <@security.authorize  access="hasRole('ROLE_ADMIN')">
+            <#if sections_admin?has_content>
+                <#list sections_admin as s >
+                    <h5><a href="/catalog/teachers?sportsclubid=${sportsclubid}&sectionid=${s.id}">${s.name}</a></h5>
                     <form action="/admin/catalog/sections/delete" method="GET">
                         <input type="hidden" name="deletingsectionid" value="${s.id}">
                         <input type="hidden" name="scid" value="${sportsclubid}">
                         <input class="btn btn-danger" type="submit" value="Удалить">
                     </form>
-                </@security.authorize>
-            </#list>
-        <#else >
-            <p>К сожалению, для данного клуба нет доступных преподавателей для данной секции</p>
-        </#if>
+                </#list>
+            <#else >
+                <p>К сожалению, для данного клуба нет доступных секций</p>
+            </#if>
+        </@security.authorize>
         </div>
     </div>
 </div>

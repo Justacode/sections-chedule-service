@@ -60,8 +60,10 @@ public class MainController {
 
     @RequestMapping("/catalog/sections")
     public String sections(Model model, @RequestParam("sportsclubid") long sportsClubId) {
-        List<Section> sections = sectionService.getAll();
-        model.addAttribute("sections", sections);
+        List<Section> sections_user = sectionService.getIfTeachersExist(sportsClubId);
+        List<Section> sections_admin = sectionService.getAll();
+        model.addAttribute("sections_user", sections_user);
+        model.addAttribute("sections_admin", sections_admin);
         model.addAttribute("sportsclubid", sportsClubId);
         return "sections";
     }

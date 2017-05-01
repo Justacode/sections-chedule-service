@@ -40,10 +40,10 @@ public class SectionServiceImpl implements SectionService {
         return repository.getByName(name);
     }
 
-//    @Override
-//    public List<Section> getIfTeachersExist(SportsClub club) {
-//        return repository.findSectionsByClub(club);
-//    }
+    @Override
+    public List<Section> getIfTeachersExist(Long clubId) {
+        return repository.findSectionsByClub(clubId);
+    }
 
     @Override
     public void delete(long id) {

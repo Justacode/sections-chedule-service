@@ -14,6 +14,6 @@ public interface SectionRepository extends JpaRepository<Section, Long> {
 
     Section getByName(String name);
 
-//    @Query("select s from Section s where exists(select t from Teacher t where s = t.section and t.sportsClub = :sportsclub)")
-//    List<Section> findSectionsByClub(@Param("sportsclubid") SportsClub sportsClub);
+    @Query(value = "select * from sections s where exists(select * from teachers where s.id = section_id and sports_club_id = ?1);", nativeQuery = true)
+    List<Section> findSectionsByClub(long id);
 }
