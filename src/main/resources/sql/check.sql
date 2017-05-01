@@ -1,1 +1,0 @@
-select s from sections s where exists(select t from teachers t where s.id = t.section_id and t.sports_club_id = 100)

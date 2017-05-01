@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-05-01.20:42:24.404</IntrospectionTimestamp>
-      <IntrospectionStateNumber>957</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-05-01.21:50:52.028</IntrospectionTimestamp>
+      <IntrospectionStateNumber>993</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -30,77 +30,77 @@
       <ObjectId>12113</ObjectId>
     </schema>
     <sequence id="9" parent="3" name="cities_id_seq">
-      <ObjectId>17004</ObjectId>
-      <StateNumber>948</StateNumber>
+      <ObjectId>17073</ObjectId>
+      <StateNumber>984</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="10" parent="3" name="hibernate_sequence">
-      <ObjectId>17006</ObjectId>
-      <StateNumber>949</StateNumber>
+      <ObjectId>17075</ObjectId>
+      <StateNumber>985</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="11" parent="3" name="sections_id_seq">
-      <ObjectId>17008</ObjectId>
-      <StateNumber>950</StateNumber>
+      <ObjectId>17077</ObjectId>
+      <StateNumber>986</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="12" parent="3" name="sports_clubs_id_seq">
-      <ObjectId>17010</ObjectId>
-      <StateNumber>951</StateNumber>
+      <ObjectId>17079</ObjectId>
+      <StateNumber>987</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="13" parent="3" name="teachers_id_seq">
-      <ObjectId>17012</ObjectId>
-      <StateNumber>952</StateNumber>
+      <ObjectId>17081</ObjectId>
+      <StateNumber>988</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="14" parent="3" name="trainings_id_seq">
-      <ObjectId>17014</ObjectId>
-      <StateNumber>953</StateNumber>
+      <ObjectId>17083</ObjectId>
+      <StateNumber>989</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <table id="15" parent="3" name="cities">
-      <ObjectId>16968</ObjectId>
-      <StateNumber>954</StateNumber>
+      <ObjectId>17037</ObjectId>
+      <StateNumber>990</StateNumber>
     </table>
     <table id="16" parent="3" name="sections">
-      <ObjectId>16973</ObjectId>
-      <StateNumber>955</StateNumber>
+      <ObjectId>17042</ObjectId>
+      <StateNumber>991</StateNumber>
     </table>
     <table id="17" parent="3" name="sports_clubs">
-      <ObjectId>16978</ObjectId>
-      <StateNumber>956</StateNumber>
+      <ObjectId>17047</ObjectId>
+      <StateNumber>992</StateNumber>
     </table>
     <table id="18" parent="3" name="teachers">
-      <ObjectId>16983</ObjectId>
-      <StateNumber>957</StateNumber>
+      <ObjectId>17052</ObjectId>
+      <StateNumber>993</StateNumber>
     </table>
     <table id="19" parent="3" name="trainings">
-      <ObjectId>16991</ObjectId>
-      <StateNumber>957</StateNumber>
+      <ObjectId>17060</ObjectId>
+      <StateNumber>993</StateNumber>
     </table>
     <table id="20" parent="3" name="users">
-      <ObjectId>16996</ObjectId>
-      <StateNumber>947</StateNumber>
+      <ObjectId>17065</ObjectId>
+      <StateNumber>983</StateNumber>
     </table>
     <column id="21" parent="15" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>942</StateNumber>
+      <StateNumber>978</StateNumber>
     </column>
     <column id="22" parent="15" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>942</StateNumber>
+      <StateNumber>978</StateNumber>
     </column>
     <index id="23" parent="15" name="cities_pkey">
-      <ObjectId>16971</ObjectId>
+      <ObjectId>17040</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="24" parent="15" name="cities_pkey">
-      <ObjectId>16972</ObjectId>
+      <ObjectId>17041</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>cities_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -109,20 +109,20 @@
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>943</StateNumber>
+      <StateNumber>979</StateNumber>
     </column>
     <column id="26" parent="16" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>943</StateNumber>
+      <StateNumber>979</StateNumber>
     </column>
     <index id="27" parent="16" name="sections_pkey">
-      <ObjectId>16976</ObjectId>
+      <ObjectId>17045</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="28" parent="16" name="sections_pkey">
-      <ObjectId>16977</ObjectId>
+      <ObjectId>17046</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>sections_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -131,32 +131,32 @@
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>944</StateNumber>
+      <StateNumber>980</StateNumber>
     </column>
     <column id="30" parent="17" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>944</StateNumber>
+      <StateNumber>980</StateNumber>
     </column>
     <column id="31" parent="17" name="city_id">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>944</StateNumber>
+      <StateNumber>980</StateNumber>
     </column>
     <index id="32" parent="17" name="sports_clubs_pkey">
-      <ObjectId>16981</ObjectId>
+      <ObjectId>17050</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="33" parent="17" name="sports_clubs_pkey">
-      <ObjectId>16982</ObjectId>
+      <ObjectId>17051</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>sports_clubs_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="34" parent="17" name="fkbqdbet3nnfphoge4u1pcv1xhy">
-      <ObjectId>17016</ObjectId>
+      <ObjectId>17085</ObjectId>
       <ColNames>city_id</ColNames>
       <RefTableName>cities</RefTableName>
       <RefKeyName>cities_pkey</RefKeyName>
@@ -166,65 +166,65 @@
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>945</StateNumber>
+      <StateNumber>981</StateNumber>
     </column>
     <column id="36" parent="18" name="age">
       <Position>2</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>945</StateNumber>
+      <StateNumber>981</StateNumber>
     </column>
     <column id="37" parent="18" name="full_name">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>945</StateNumber>
+      <StateNumber>981</StateNumber>
     </column>
     <column id="38" parent="18" name="phone_number">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>945</StateNumber>
+      <StateNumber>981</StateNumber>
     </column>
     <column id="39" parent="18" name="regalia">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>945</StateNumber>
+      <StateNumber>981</StateNumber>
     </column>
     <column id="40" parent="18" name="work_experience">
       <Position>6</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>945</StateNumber>
+      <StateNumber>981</StateNumber>
     </column>
     <column id="41" parent="18" name="section_id">
       <Position>7</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>945</StateNumber>
+      <StateNumber>981</StateNumber>
     </column>
     <column id="42" parent="18" name="sports_club_id">
       <Position>8</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>945</StateNumber>
+      <StateNumber>981</StateNumber>
     </column>
     <index id="43" parent="18" name="teachers_pkey">
-      <ObjectId>16989</ObjectId>
+      <ObjectId>17058</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="44" parent="18" name="teachers_pkey">
-      <ObjectId>16990</ObjectId>
+      <ObjectId>17059</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>teachers_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="45" parent="18" name="fktjbvwemyol4ix271hm89fjgxt">
-      <ObjectId>17021</ObjectId>
+      <ObjectId>17090</ObjectId>
       <ColNames>section_id</ColNames>
       <RefTableName>sections</RefTableName>
       <RefKeyName>sections_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="46" parent="18" name="fkpub8y514ngmvk69dmh4xm2vqo">
-      <ObjectId>17026</ObjectId>
+      <ObjectId>17095</ObjectId>
       <ColNames>sports_club_id</ColNames>
       <RefTableName>sports_clubs</RefTableName>
       <RefKeyName>sports_clubs_pkey</RefKeyName>
@@ -234,37 +234,37 @@
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>946</StateNumber>
+      <StateNumber>982</StateNumber>
     </column>
     <column id="48" parent="19" name="day">
       <Position>2</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>946</StateNumber>
+      <StateNumber>982</StateNumber>
     </column>
     <column id="49" parent="19" name="time">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>946</StateNumber>
+      <StateNumber>982</StateNumber>
     </column>
     <column id="50" parent="19" name="teacher_id">
       <Position>4</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>946</StateNumber>
+      <StateNumber>982</StateNumber>
     </column>
     <index id="51" parent="19" name="trainings_pkey">
-      <ObjectId>16994</ObjectId>
+      <ObjectId>17063</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="52" parent="19" name="trainings_pkey">
-      <ObjectId>16995</ObjectId>
+      <ObjectId>17064</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>trainings_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="53" parent="19" name="fk6opx17j2tlbjfm5odt60px1cw">
-      <ObjectId>17031</ObjectId>
+      <ObjectId>17100</ObjectId>
       <ColNames>teacher_id</ColNames>
       <RefTableName>teachers</RefTableName>
       <RefKeyName>teachers_pkey</RefKeyName>
@@ -274,30 +274,30 @@
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>947</StateNumber>
+      <StateNumber>983</StateNumber>
     </column>
     <column id="55" parent="20" name="login">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>947</StateNumber>
+      <StateNumber>983</StateNumber>
     </column>
     <column id="56" parent="20" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>947</StateNumber>
+      <StateNumber>983</StateNumber>
     </column>
     <column id="57" parent="20" name="role">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
-      <StateNumber>947</StateNumber>
+      <StateNumber>983</StateNumber>
     </column>
     <index id="58" parent="20" name="users_pkey">
-      <ObjectId>17002</ObjectId>
+      <ObjectId>17071</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="59" parent="20" name="users_pkey">
-      <ObjectId>17003</ObjectId>
+      <ObjectId>17072</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
