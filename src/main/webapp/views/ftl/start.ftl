@@ -3,10 +3,10 @@
 <#include "header.ftl">
 
 <@security.authorize  access="hasRole('ROLE_ADMIN')">
-<p>Вы находитесь в режиме администратора</p>
+<p class="text-center">Вы находитесь в режиме администратора</p>
 </@security.authorize>
-<div>
-    <a href="/catalog/cities">TRY!!!</a>
+<div class="text-center">
+    <a href="/catalog/cities" class="btn btn-info" role="button">Открыть каталог</a>
 </div>
 
 <#include "footer.ftl">

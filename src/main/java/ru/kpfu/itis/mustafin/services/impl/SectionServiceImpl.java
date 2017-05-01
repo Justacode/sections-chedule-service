@@ -41,8 +41,8 @@ public class SectionServiceImpl implements SectionService {
     }
 
 //    @Override
-//    public List<Section> getIfTeachersExist(long clubId) {
-//        return repository.findSectionsByClub(clubId);
+//    public List<Section> getIfTeachersExist(SportsClub club) {
+//        return repository.findSectionsByClub(club);
 //    }
 
     @Override

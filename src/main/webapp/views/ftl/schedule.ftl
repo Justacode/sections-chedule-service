@@ -2,7 +2,7 @@
 <#assign security=JspTaglibs["http://www.springframework.org/security/tags"] />
 <#include "header.ftl">
 <div>
-    <h2>Информация о преподавателе</h2>
+    <h3 class="text-center">Информация о преподавателе</h3>
 </div>
 
 <#assign week = ['ПН','ВТ','СР','ЧТ','ПТ','СБ']>
@@ -22,7 +22,7 @@
                 </#list>
             </select>
             <input type="hidden" name="teacherid" value="${teacher.id}">
-            <input type="submit" value="Добавить">
+            <input class="btn btn-success" type="submit" value="Добавить">
         </form>
     </@security.authorize>
         <h2>Данные преподавателя</h2>
@@ -74,7 +74,7 @@
                                         <form action="/admin/catalog/trainings/delete" method="GET">
                                             <input type="hidden" name="teacherid" value="${teacher.id}">
                                             <input type="hidden" name="trainingid" value="${l}">
-                                            <input type="submit" value="Удалить">
+                                            <input class="btn btn-danger btn-group-xs" type="submit" value="Удалить">
                                         </form>
                                     </@security.authorize>
                                 </#if>

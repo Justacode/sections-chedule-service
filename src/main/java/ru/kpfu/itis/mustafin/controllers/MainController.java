@@ -28,7 +28,7 @@ public class MainController {
 
     @Autowired
     public MainController(CityService cityServ, SportsClubService sportsClubServ,
-                          SectionService sectionServ, TeacherService teacherServ, TrainingService trainingServ){
+                          SectionService sectionServ, TeacherService teacherServ, TrainingService trainingServ) {
         this.cityService = cityServ;
         this.sportsClubService = sportsClubServ;
         this.sectionService = sectionServ;
@@ -42,14 +42,14 @@ public class MainController {
     }
 
     @RequestMapping("/catalog/cities")
-    public String cities(Model model){
+    public String cities(Model model) {
         List<City> cities = cityService.getAll();
         model.addAttribute("cities", cities);
         return "cities";
     }
 
     @RequestMapping("/catalog/sportsclubs")
-    public String sportsClubs(Model model, @RequestParam("cityid") long cityId){
+    public String sportsClubs(Model model, @RequestParam("cityid") long cityId) {
         List<SportsClub> sportsClubs = sportsClubService.getByCityId(cityId);
         List<City> cities = cityService.getAll();
         model.addAttribute("cityid", cityId);
@@ -59,7 +59,7 @@ public class MainController {
     }
 
     @RequestMapping("/catalog/sections")
-    public String sections(Model model, @RequestParam("sportsclubid") long sportsClubId){
+    public String sections(Model model, @RequestParam("sportsclubid") long sportsClubId) {
         List<Section> sections = sectionService.getAll();
         model.addAttribute("sections", sections);
         model.addAttribute("sportsclubid", sportsClubId);
@@ -67,7 +67,7 @@ public class MainController {
     }
 
     @RequestMapping("/catalog/teachers")
-    public String teachers(Model model, @RequestParam("sportsclubid") long sportsClubId, @RequestParam("sectionid") long sectionId){
+    public String teachers(Model model, @RequestParam("sportsclubid") long sportsClubId, @RequestParam("sectionid") long sectionId) {
         List<Teacher> teachers = teacherService.getBySportsClubAndSection(sportsClubId, sectionId);
         model.addAttribute("sportsclubid", sportsClubId);
         model.addAttribute("sectionid", sectionId);
@@ -76,7 +76,7 @@ public class MainController {
     }
 
     @RequestMapping("/catalog/schedule")
-    public String schedule(Model model, @RequestParam("teacherid") long teacherId){
+    public String schedule(Model model, @RequestParam("teacherid") long teacherId) {
         Teacher teacher = teacherService.getById(teacherId);
         List<Training> trainings = trainingService.getByTeacherSorted(teacherId);
         Map<String, List<Long>> schedule = TrainingScheduleConstructor.construct(trainings);
@@ -86,7 +86,7 @@ public class MainController {
     }
 
     @RequestMapping("/catalog/")
-    public String index(Model model){
+    public String index(Model model) {
         return "start";
     }
 }

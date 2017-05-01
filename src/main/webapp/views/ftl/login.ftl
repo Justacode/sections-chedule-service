@@ -8,20 +8,20 @@
     <#if error??>
         Введен неверный логин или пароль!
     </#if>
-    <@sf.form cssClass="vForm" role="form" action='/login/process' method="post" modelAttribute="authForm">
+    <@sf.form cssClass="form-group" role="form" action='/login/process' method="post" modelAttribute="authForm">
         <fieldset>
             <div class="field">
                 <@sf.label path="login">Login</@sf.label>
-                <@sf.input cssClass="vField1" path="login" type="text"/>
+                <@sf.input cssClass="form-control"  path="login" type="text"/>
                 <@sf.errors path="login"/>
             </div>
             <div class="field">
                 <@sf.label path="password">Password</@sf.label>
-                <@sf.input cssClass="vField2" path="password" type="password"/>
+                <@sf.input cssClass="form-control" path="password" type="password"/>
                 <@sf.errors path="password"/>
             </div>
             <div>
-                <input type="submit" value="Войти">
+                <input class="btn btn-default" type="submit" value="Войти">
             </div>
         </fieldset>
     </@sf.form>

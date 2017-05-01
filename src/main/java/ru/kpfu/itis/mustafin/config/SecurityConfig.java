@@ -16,10 +16,9 @@ import ru.kpfu.itis.mustafin.security.AuthenticationProviderImpl;
 @ComponentScan("ru.kpfu.itis.mustafin.security")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-
+    @Autowired
     private AuthenticationProviderImpl authProvider;
 
-    @Autowired
     public void configure(AuthenticationManagerBuilder auth){auth.authenticationProvider(authProvider);}
 
     protected void configure(HttpSecurity http) throws Exception{
