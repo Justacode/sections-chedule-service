@@ -8,3 +8,5 @@
 <div>
     <a href="/catalog/cities">TRY!!!</a>
 </div>
+
+<#include "footer.ftl">

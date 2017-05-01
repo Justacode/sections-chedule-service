@@ -22,7 +22,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 
     //private final PasswordEncoder bcryptEncoder = new BCryptPasswordEncoder();
 
-    private final UserService userService;
+    private UserService userService;
 
     @Autowired
     public AuthenticationProviderImpl(UserService userService){

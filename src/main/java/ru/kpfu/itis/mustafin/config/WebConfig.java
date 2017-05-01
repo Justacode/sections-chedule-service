@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("ru.kpfu.itis.mustafin")
+@ComponentScan("ru.kpfu.itis.mustafin.controllers")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
@@ -27,7 +27,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public FreeMarkerConfigurer freemarkerConfig() {
         FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
-        freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/views/ftl/");
+        freeMarkerConfigurer.setTemplateLoaderPath("/views/ftl/");
         return freeMarkerConfigurer;
     }
 

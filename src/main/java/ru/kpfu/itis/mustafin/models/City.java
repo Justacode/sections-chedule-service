@@ -46,12 +46,4 @@ public class City {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("City");
-        sb.append("{name='").append(name).append('\'');
-        sb.append('}');
-        return sb.toString();
-    }
 }
